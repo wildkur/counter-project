@@ -1,34 +1,30 @@
-// Tu código aquí. Solución de Didac
+// Tu código aquí. 
 
-let increaseButton = document.querySelector('.nextBtn');
-let decreaseButton = document.querySelector('.prevBtn');
+const buttons = document.querySelectorAll('.counterBtn')
+let count = 0
 
-let count = 0;
-let counter = document.querySelector('#counter');
+buttons.forEach(function(button){
+    button.addEventListener('click', function(){
+      if (button.classList.contains('prevBtn')){
+        count--
+      } 
+      else if (button.classList.contains('nextBtn')){
+        count++
+      }
 
-increaseButton.addEventListener('click', function() {
-    count++;
-    updateCounter(count);
-
-})
-
-decreaseButton.addEventListener('click', function() {
-    count--;
-    updateCounter(count);
-
-
-  
-})
-
-function updateCounter (count) {
-    counter.innerHTML = count;
-    
-    if(count < 0) {
-        counter.style.color = "red"
-    }
-    else if(count > 0) {
-        counter.style.color = "green"
-    }
-    else counter.style.color = "black"
-
-}
+      const counter = document.querySelector('#counter')
+      counter.textContent = count
+      counter.classList.remove('myred', 'mygreen', 'mygrey')
+      
+      
+      if (count < 0 ){
+        counter.classList.add('myred')
+      }
+      else if (count > 0){
+        counter.classList.add('mygreen')
+      }
+      else{
+        counter.classList.add('mygrey')
+      }
+    })
+  })

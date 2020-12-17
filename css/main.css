@@ -34,3 +34,15 @@ body {
 .nextBtn:hover {
   background: var(--lightBlue);
 }
+
+#counter.mygreen{
+  color: #7fb800;
+}
+
+#counter.myred{
+  color: #b80028;
+}
+
+#counter.mygrey{
+  color: #423d3d;
+}
